@@ -22,5 +22,5 @@ $inspect(api);
 } }> api </button>
 
 <div style="width: 500px;">
-    <Chessground {config} bind:api={api}></Chessground>
+    <Chessground bind:config bind:api></Chessground>
 </div>

@@ -22,14 +22,8 @@
     })
 
     onMount(() => {
-		console.log('the component has mounted');
-	});
-
-
-    // onMount(() => {
-    //     api = Chessground(container, config);
-    //     console.log('API', api);
-    // });
+        api = Chessground(container, {});
+    });
 
 	export function destroy() {
 		return api.destroy();
