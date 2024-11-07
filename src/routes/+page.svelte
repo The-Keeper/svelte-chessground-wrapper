@@ -7,6 +7,7 @@
     let config = $state({})
 
 onMount(() => {
+    console.log('INDEX');
 })
 
 $inspect(api);
