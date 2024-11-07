@@ -1,9 +1,10 @@
 <script lang="ts">
     import Chessground from "$lib/Chessground.svelte";
     import type { Api } from "chessground/api";
+    import type { Config as CGConfig } from "chessground/config";
 
     let api: Api = $state(null as unknown as Api);
-    let config = $state({});
+    let config: CGConfig = $state({});
 
     // $inspect(api);
 </script>
