@@ -25,6 +25,14 @@
     api
 </button>
 
+<button
+    onclick={() => {
+        console.log(api.getFen())
+    }}
+>
+    fen
+</button>
+
 <div style="width: 500px;">
     <Chessground bind:config bind:api></Chessground>
 </div>
