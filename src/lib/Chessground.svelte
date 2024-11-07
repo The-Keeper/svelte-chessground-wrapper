@@ -15,20 +15,19 @@
         ...props
     }: { config: CGConfig; api: Api } = $props();
 
-    $effect(() => { 
+    $effect(() => {
         if (api) {
-            api.set(config) 
+            api.set(config);
         }
-    })
+    });
 
     onMount(() => {
         api = Chessground(container, {});
     });
 
-	export function destroy() {
-		return api.destroy();
-	}
-
+    export function destroy() {
+        return api.destroy();
+    }
 </script>
 
 <div class="cg-wrap {className}" bind:this={container}></div>
