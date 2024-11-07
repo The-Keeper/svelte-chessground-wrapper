@@ -1,8 +1,7 @@
 <script lang="ts">
     import { Chessground } from "chessground";
-    import type { Config as CGConfig } from "chessground/config";
-    import type { Api } from "chessground/api";
     import { onMount } from "svelte";
+    import type { CGApi, CGConfig } from "./Chessground";
 
     let className = $state("cg-default-style");
     export { className as class };
@@ -13,7 +12,7 @@
         config = $bindable(),
         api = $bindable(),
         ...props
-    }: { config: CGConfig; api: Api } = $props();
+    }: { config: CGConfig; api: CGApi } = $props();
 
     $effect(() => {
         if (api) {
