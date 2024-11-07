@@ -7,16 +7,16 @@
     let className = $state("cg-default-style");
     export { className as class };
 
+    let container: HTMLElement;
+
     let {
         config = $bindable(),
         api = $bindable(),
         ...props
     }: { config: CGConfig; api: Api } = $props();
 
-    let container: HTMLElement;
-
     $effect(() => { 
-        if (api && config) {
+        if (api) {
             api.set(config) 
         }
     })
@@ -24,6 +24,11 @@
     onMount(() => {
         api = Chessground(container, config);
     });
+
+	export function destroy() {
+		return api.destroy();
+	}
+
 </script>
 
 <div class="cg-wrap {className}" bind:this={container}></div>

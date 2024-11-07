@@ -8,9 +8,9 @@
     let config: Config = $state({});
 
 onMount(() => {
-    $inspect(api)
-    $inspect(config)
 })
+
+$inspect(api);
 
 </script>
 
@@ -18,7 +18,9 @@ onMount(() => {
             config = { fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1' }
 } }> setting </button>
 <button onclick={ () => {
-    api.set({fen: `rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2`})
+    api.move("e7", "e5")
 } }> api </button>
 
-<Chessground {config} {api}></Chessground>
+<div style="width: 500px;">
+    <Chessground {config} {api}></Chessground>
+</div>
