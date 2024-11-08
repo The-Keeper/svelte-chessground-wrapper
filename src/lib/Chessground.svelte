@@ -12,7 +12,7 @@
         config = $bindable(),
         api = $bindable(),
         ...props
-    }: { config: CGConfig; api: CGApi } = $props();
+    }: { config: CGConfig; api?: CGApi } = $props();
 
     $effect(() => {
         if (api) {
@@ -25,7 +25,7 @@
     });
 
     export function destroy() {
-        return api.destroy();
+        return api?.destroy();
     }
 </script>
 
